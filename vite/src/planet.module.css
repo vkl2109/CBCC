@@ -1,0 +1,36 @@
+.baseCard {
+    transition: all 0.5s ease-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.baseCardInner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.baseCardFront,
+.baseCardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.baseCardBack {
+    transform: rotateY(180deg);
+}
+

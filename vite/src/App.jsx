@@ -1,6 +1,5 @@
 import './App.css'
 import PlanetSlide from './PlanetSlide'
-import { Center } from '@mantine/core';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
@@ -152,16 +151,16 @@ function App() {
 
   return (
     <AliceCarousel 
-      // autoPlay
+      autoPlay
       mouseTracking
       infinite
       animationDuration={1000}
       disableButtonsControls
-      // autoPlayInterval={1000}
+      autoPlayInterval={5000}
       items=
       {exampleData.map((planet, i) => {
         return(
-          <PlanetSlide key={i} planet={planet} />
+          <PlanetSlide key={i} planet={planet}/>
         )
       })} />
   )
