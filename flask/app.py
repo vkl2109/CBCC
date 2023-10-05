@@ -3,6 +3,7 @@ from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from bson.json_util import dumps
 from dotenv import dotenv_values
+# from flask_cors import CORS
 
 config = dotenv_values(".env")
 
@@ -16,6 +17,7 @@ db = client.sample_guides
 planets = db.planets
 
 app = Flask(__name__, static_folder='../vite/dist/', static_url_path='/')
+# CORS(app)
 
 @app.route("/")
 def index():

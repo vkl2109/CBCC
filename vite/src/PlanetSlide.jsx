@@ -6,7 +6,11 @@ import classes from './planet.module.css'
 export default function PlanetSlide({ planet }) {
     const [ flip, setFlip ] = useState(true)
 
-    const imgURL = `/public/${planet.name}.png`
+    const imgPath = `/${planet.name}.png`
+
+    const imgURL = new URL(imgPath, import.meta.url).href
+
+    console.log(imgURL)
     
     const normalizeData = (100 * (planet.surfaceTemperatureC.mean + 200))/664
 
