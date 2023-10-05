@@ -1,34 +1,164 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { Carousel } from '@mantine/carousel';
+import PlanetSlide from './PlanetSlide'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const exampleData = [
+   {
+      "_id":{
+         "$oid":"621ff30d2a3e781873fcb65c"
+      },
+      "name":"Mercury",
+      "orderFromSun":1,
+      "hasRings":false,
+      "mainAtmosphere":[
+         
+      ],
+      "surfaceTemperatureC":{
+         "min":-173,
+         "max":427,
+         "mean":67
+      }
+   },
+   {
+      "_id":{
+         "$oid":"621ff30d2a3e781873fcb65d"
+      },
+      "name":"Uranus",
+      "orderFromSun":7,
+      "hasRings":true,
+      "mainAtmosphere":[
+         "H2",
+         "He",
+         "CH4"
+      ],
+      "surfaceTemperatureC":{
+         "min":null,
+         "max":null,
+         "mean":-197.2
+      }
+   },
+   {
+      "_id":{
+         "$oid":"621ff30d2a3e781873fcb65e"
+      },
+      "name":"Mars",
+      "orderFromSun":4,
+      "hasRings":false,
+      "mainAtmosphere":[
+         "CO2",
+         "Ar",
+         "N"
+      ],
+      "surfaceTemperatureC":{
+         "min":-143,
+         "max":35,
+         "mean":-63
+      }
+   },
+   {
+      "_id":{
+         "$oid":"621ff30d2a3e781873fcb65f"
+      },
+      "name":"Neptune",
+      "orderFromSun":8,
+      "hasRings":true,
+      "mainAtmosphere":[
+         "H2",
+         "He",
+         "CH4"
+      ],
+      "surfaceTemperatureC":{
+         "min":null,
+         "max":null,
+         "mean":-201
+      }
+   },
+   {
+      "_id":{
+         "$oid":"621ff30d2a3e781873fcb660"
+      },
+      "name":"Jupiter",
+      "orderFromSun":5,
+      "hasRings":true,
+      "mainAtmosphere":[
+         "H2",
+         "He",
+         "CH4"
+      ],
+      "surfaceTemperatureC":{
+         "min":null,
+         "max":null,
+         "mean":-145.15
+      }
+   },
+   {
+      "_id":{
+         "$oid":"621ff30d2a3e781873fcb661"
+      },
+      "name":"Earth",
+      "orderFromSun":3,
+      "hasRings":false,
+      "mainAtmosphere":[
+         "N",
+         "O2",
+         "Ar"
+      ],
+      "surfaceTemperatureC":{
+         "min":-89.2,
+         "max":56.7,
+         "mean":14
+      }
+   },
+   {
+      "_id":{
+         "$oid":"621ff30d2a3e781873fcb662"
+      },
+      "name":"Venus",
+      "orderFromSun":2,
+      "hasRings":false,
+      "mainAtmosphere":[
+         "CO2",
+         "N"
+      ],
+      "surfaceTemperatureC":{
+         "min":null,
+         "max":null,
+         "mean":464
+      }
+   },
+   {
+      "_id":{
+         "$oid":"621ff30d2a3e781873fcb663"
+      },
+      "name":"Saturn",
+      "orderFromSun":6,
+      "hasRings":true,
+      "mainAtmosphere":[
+         "H2",
+         "He",
+         "CH4"
+      ],
+      "surfaceTemperatureC":{
+         "min":null,
+         "max":null,
+         "mean":-139.15
+      }
+   }
+]
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Carousel 
+      sx={{ maxWidth: 320 }}
+      loop
+      >
+      {exampleData.map((planet, i) => {
+        return(
+          <PlanetSlide key={i} planet={planet} />
+        )
+      })}
+    </Carousel>
   )
 }
 
