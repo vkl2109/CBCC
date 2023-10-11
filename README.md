@@ -1,4 +1,4 @@
-# Space App displaying Planets! \
+# Space App displaying Planets!
 Built a simple React application using Vite, with CSS Modules and Mantine UI Components \
 Data fetched from MongoDB Atlas sample dataset via Flask server \
 Deployed via Gunicorn, with Nginx running reverse proxy \
